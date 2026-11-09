@@ -1,0 +1,61 @@
+{
+ "version": "1.17.0",
+ "date": "2026-11-09",
+ "notes": [
+  "Primera versión de la página para amigos.",
+  "La app te avisa sola cuando sale una versión nueva (y en el menú del ícono podés buscar actualizaciones)."
+ ],
+ "page": "https://santi-br.github.io/mixtape/",
+ "windows": {
+  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.17.0/MIXTAPE-Windows.exe",
+  "size": 394149615
+ },
+ "mac": {
+  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.17.0/MIXTAPE-Mac.dmg",
+  "size": 326296390
+ },
+ "extras": [
+  {
+   "name": "Paquete MIDI Pro",
+   "desc": "Para Windows: piano y voz cantada a MIDI con mucha más precisión. Va en la carpeta MIXTAPE.",
+   "url": "https://github.com/Santi-br/mixtape/releases/download/v1.17.0/MIXTAPE-MIDI-Pro.exe",
+   "size": 46912908
+  }
+ ],
+ "history": [
+  {
+   "version": "1.16.1",
+   "date": "2026-11-09",
+   "notes": [
+    "Al recortar un video ahora podés agarrar la barrita blanca (o tocar en cualquier parte de la línea) para recorrerlo.",
+    "Los bordes del recorte se agarran bien también al principio y al final."
+   ]
+  },
+  {
+   "version": "1.16",
+   "date": "2026-11-07",
+   "notes": [
+    "Foto a texto: copiá el texto de un cartel, una captura o un papel (español e inglés, sin internet).",
+    "En Todas: bajar una playlist o un álbum entero.",
+    "Arreglada una línea clara que aparecía abajo de las tapas del hub."
+   ]
+  },
+  {
+   "version": "1.15",
+   "date": "2026-11-05",
+   "notes": [
+    "Renombrador: cambiá el nombre de un montón de archivos de una, con número, fecha, mayúsculas o etiquetas del tema.",
+    "También podés ponerle un nombre distinto a cada uno, o pegar una lista de nombres.",
+    "Se puede deshacer."
+   ]
+  },
+  {
+   "version": "1.14",
+   "date": "2026-11-04",
+   "notes": [
+    "La app ahora se llama MIXTAPE: ícono y colores nuevos.",
+    "Uní fotos y PDF en un solo PDF, eligiendo el orden."
+   ]
+  }
+ ]
+}
