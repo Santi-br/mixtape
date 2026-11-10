@@ -1,8 +1,9 @@
 {
- "version": "1.19.2",
+ "version": "1.19.3",
  "date": "2026-11-10",
  "notes": [
-  "Editor de video: cada video tiene un parlantito para silenciar su sonido de un toque (o tecla M con el clip elegido)."
+  "Arreglo: la actualización automática a veces volvía a la versión anterior al reiniciar.",
+  "Incluye todo lo de la 1.19.1 y 1.19.2 (silenciar videos con el parlantito, zoom con Ctrl + rueda, arrastrar fuera de la línea de tiempo)."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
@@ -22,6 +23,13 @@
   }
  ],
  "history": [
+  {
+   "version": "1.19.2",
+   "date": "2026-11-10",
+   "notes": [
+    "Editor de video: cada video tiene un parlantito para silenciar su sonido de un toque (o tecla M con el clip elegido)."
+   ]
+  },
   {
    "version": "1.19.1",
    "date": "2026-11-10",
@@ -92,9 +100,9 @@
   }
  ],
  "patch": {
-  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.2.tar.gz",
-  "size": 434003,
-  "sha256": "ca90c46eaf0bef61cdf906de8e858bd7eb91ad7c54ce486b9fb90cc296dcda91",
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.3.tar.gz",
+  "size": 434315,
+  "sha256": "1eb58dc56e3730bc4b441fb91fd92e2a3512ffdffac92684fd9ff50c9ab43401",
   "base": "1.19.0"
  }
 }
