@@ -1,28 +1,37 @@
 {
- "version": "1.17.0",
- "date": "2026-11-09",
+ "version": "1.18.0",
+ "date": "2026-11-10",
  "notes": [
-  "Primera versión de la página para amigos.",
-  "La app te avisa sola cuando sale una versión nueva (y en el menú del ícono podés buscar actualizaciones)."
+  "Quitar fondo: sacale el fondo a una foto y queda un PNG transparente (personas, objetos, comida, autos…).",
+  "La primera vez baja la IA (170 MB); después anda sin internet.",
+  "\"Fondo\" ahora se llama \"Poner fondo\" en el hub."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
-  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.17.0/MIXTAPE-Windows.exe",
-  "size": 394149615
+  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.18.0/MIXTAPE-Windows.exe",
+  "size": 394110191
  },
  "mac": {
-  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.17.0/MIXTAPE-Mac.dmg",
-  "size": 326296390
+  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.18.0/MIXTAPE-Mac.dmg",
+  "size": 326297222
  },
  "extras": [
   {
    "name": "Paquete MIDI Pro",
    "desc": "Para Windows: piano y voz cantada a MIDI con mucha más precisión. Va en la carpeta MIXTAPE.",
-   "url": "https://github.com/Santi-br/mixtape/releases/download/v1.17.0/MIXTAPE-MIDI-Pro.exe",
+   "url": "https://github.com/Santi-br/mixtape/releases/download/v1.18.0/MIXTAPE-MIDI-Pro.exe",
    "size": 46912908
   }
  ],
  "history": [
+  {
+   "version": "1.17.0",
+   "date": "2026-11-09",
+   "notes": [
+    "Primera versión de la página para amigos.",
+    "La app te avisa sola cuando sale una versión nueva (y en el menú del ícono podés buscar actualizaciones)."
+   ]
+  },
   {
    "version": "1.16.1",
    "date": "2026-11-09",
