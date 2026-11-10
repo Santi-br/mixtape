@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<script>try{if(localStorage.getItem("mx-ok")!=="2a486f5298482aec2f6523f518a58ff80f27cddbb030e9a95c27b72b11b6ff76")location.replace("../?a=celu")}catch(e){location.replace("../?a=celu")}</script>
+<meta name="robots" content="noindex, nofollow">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#eef1f5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MIXTAPE">
+<link rel="icon" href="icon-256.png">
+<link rel="apple-touch-icon" href="icon-256.png">
+<title>MIXTAPE</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <main id="hub" aria-label="MIXTAPE">
+    <div id="stage">
+      <div id="bg" aria-hidden="true"></div>
+      <div class="top">
+        <div class="logo" role="img" aria-label="MIXTAPE"></div>
+        <div class="top-btns">
+          <button class="round" data-act="todas" aria-label="Todas las herramientas"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg></button>
+          <button class="round" data-act="ajustes" aria-label="Ajustes"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+        </div>
+      </div>
+      <div class="track" id="track" aria-label="Herramientas"></div>
+      <div class="dots" id="dots" aria-hidden="true"></div>
+      <div class="cap"><div class="cap-t" id="capT"></div><div class="cap-d" id="capD"></div></div>
+      <div class="shelf-h"><span>Lo último</span><button class="lnk" data-act="recientes">Ver todo</button></div>
+      <div class="shelf" id="shelf"></div>
+      <div class="shelf-board" aria-hidden="true"></div>
+      <div id="plant" aria-hidden="true"></div>
+      <div class="fab-row">
+        <button class="fab" data-act="elegir"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Elegir archivos</button>
+        <button class="fab2" data-act="link" aria-label="Pegar un link para bajar"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></button>
+      </div>
+    </div>
+  </main>
+
+  <!-- hojas que suben desde abajo / pantallas completas -->
+  <div id="veil" hidden></div>
+  <section id="sheet" class="sheet" role="dialog" aria-modal="true" hidden><div class="grab" aria-hidden="true"></div><div class="sheet-body"></div></section>
+  <section id="screen" class="screen" role="dialog" aria-modal="true" hidden></section>
+  <div id="busy" hidden><div class="busy-box"><div class="spin" aria-hidden="true"></div><div id="busyT">Procesando…</div><div class="pbar"><i id="busyBar"></i></div></div></div>
+  <div id="toast" role="status" hidden></div>
+  <input type="file" id="pick" multiple hidden>
+
+  <script src="data.js"></script>
+  <script src="rename-rules.js"></script>
+  <script src="vendor/pdf-lib.min.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
