@@ -1,9 +1,8 @@
 {
- "version": "1.19.1",
+ "version": "1.19.2",
  "date": "2026-11-10",
  "notes": [
-  "Al arrastrar la línea blanca (o un clip) podés salirte de la línea de tiempo y sigue igual, en el editor de video y al recortar.",
-  "Editor de video: zoom con Ctrl + rueda del mouse (o pellizcando el trackpad)."
+  "Editor de video: cada video tiene un parlantito para silenciar su sonido de un toque (o tecla M con el clip elegido)."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
@@ -23,6 +22,14 @@
   }
  ],
  "history": [
+  {
+   "version": "1.19.1",
+   "date": "2026-11-10",
+   "notes": [
+    "Al arrastrar la línea blanca (o un clip) podés salirte de la línea de tiempo y sigue igual, en el editor de video y al recortar.",
+    "Editor de video: zoom con Ctrl + rueda del mouse (o pellizcando el trackpad)."
+   ]
+  },
   {
    "version": "1.19.0",
    "date": "2026-11-10",
@@ -85,9 +92,9 @@
   }
  ],
  "patch": {
-  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.1.tar.gz",
-  "size": 433750,
-  "sha256": "f0315f6cc4885bef7c3ef81f68874805b1ce097bae86701c5869b6850a5f6f56",
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.2.tar.gz",
+  "size": 434003,
+  "sha256": "ca90c46eaf0bef61cdf906de8e858bd7eb91ad7c54ce486b9fb90cc296dcda91",
   "base": "1.19.0"
  }
 }
