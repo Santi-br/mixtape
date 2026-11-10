@@ -49,7 +49,7 @@ const A = {
   resize: { t: 'Tamaño', c: 'tamano', w: 'local' }, upscale: { t: 'Mejorar', c: 'mejorar', w: 'pc' }, rmbg: { t: 'Quitar fondo', c: 'rmbg', w: 'pc' }, blur: { t: 'Blurear', c: 'blur', w: 'pc' },
   background: { t: 'Fondo', c: 'fondo', w: 'local' }, rotate: { t: 'Rotar', c: 'rotar', w: 'local' }, strip: { t: 'Sin metadata', c: 'meta', w: 'local' },
   pdf_join: { t: 'Unir en PDF', c: 'pdf', w: 'local', multi: true }, merge: { t: 'Unir', c: 'merge', w: 'local', multi: true }, split: { t: 'Separar', c: 'split', w: 'local' },
-  vtrim: { t: 'Recortar', c: 'video', w: 'soon', single: true }, transcribe: { t: 'A texto', c: 'texto', w: 'pc' }, stems: { t: 'Stems', c: 'stems', w: 'pc' },
+  vtrim: { t: 'Recortar', c: 'video', w: 'soon', single: true }, vedit: { t: 'Editar / unir', c: 'vedit', w: 'pc' }, transcribe: { t: 'A texto', c: 'texto', w: 'pc' }, stems: { t: 'Stems', c: 'stems', w: 'pc' },
   stems2: { t: 'Voz / Inst', c: 'voz', w: 'pc' }, midi: { t: 'A MIDI', c: 'midi', w: 'pc' }, keybpm: { t: 'Key / BPM', c: 'key', w: 'pc' },
   normalize: { t: 'Normalizar', c: 'norm', w: 'soon' }, mute: { t: 'Sin audio', c: 'mute', w: 'soon' }, vcompress: { t: 'Comprimir', c: 'comprimir', w: 'soon' },
   astrip: { t: 'Sin metadata', c: 'meta', w: 'soon' }, rename: { t: 'Renombrar', c: 'rename', w: 'local' }, ocr: { t: 'Foto a texto', c: 'ocr', w: 'local' }, av_replace: { t: 'Reemplazar audio', c: 'mix', w: 'soon' }, av_mix: { t: 'Sumar audio', c: 'mix', w: 'soon' },
@@ -60,7 +60,7 @@ const CAT = {
   docs: { formats: [], actions: ['pdf_join', 'rename'] },
   other: { formats: [], actions: ['rename'] },
   audio: { formats: [['mp3', 'MP3'], ['wav', 'WAV'], ['m4a', 'M4A'], ['flac', 'FLAC'], ['ogg', 'OGG'], ['mp4', 'MP4']], fw: 'soon', actions: ['vtrim', 'normalize', 'astrip', 'transcribe', 'stems', 'stems2', 'midi', 'keybpm', 'rename'] },
-  video: { formats: [['mp4', 'MP4'], ['mov', 'MOV'], ['webm', 'WEBM'], ['gif', 'GIF'], ['mp3', 'MP3'], ['wav', 'WAV']], fw: 'soon', actions: ['vtrim', 'vcompress', 'mute', 'transcribe', 'stems', 'stems2', 'midi', 'rename'] },
+  video: { formats: [['mp4', 'MP4'], ['mov', 'MOV'], ['webm', 'WEBM'], ['gif', 'GIF'], ['mp3', 'MP3'], ['wav', 'WAV']], fw: 'soon', actions: ['vedit', 'vtrim', 'vcompress', 'mute', 'transcribe', 'stems', 'stems2', 'midi', 'rename'] },
   mix: { formats: [], actions: ['av_replace', 'av_mix', 'rename'] },
 };
 // tapas del carrusel: qué abre cada una
@@ -236,7 +236,7 @@ const TODAS = {
     ['voz', 'Voz / Inst', 'Acapella e instrumental', ['audio'], 'stems2'], ['midi', 'A MIDI', 'Melodía, acordes, bajo o batería', ['audio'], 'midi'],
     ['key', 'Key / BPM', 'Tonalidad con Camelot y tempo', ['audio'], 'keybpm'], ['norm', 'Normalizar', 'A -14 LUFS sin saturar', ['audio'], 'normalize'],
     ['mp4', 'A MP4 con la tapa', 'Listo para subir', ['audio'], 'f:mp4'], ['meta', 'Sin metadata', 'Copia sin etiquetas', ['audio'], 'astrip']],
-  Video: [['convertir', 'Convertir', 'MP4, MOV, WEBM, GIF o sacar el audio', ['video'], 'f'], ['video', 'Cortar y encuadrar', 'Y pasarlo a 9:16', ['video'], 'vtrim'],
+  Video: [['vedit', 'Editar y unir videos', 'Línea de tiempo con pistas y música', ['video'], 'vedit'], ['convertir', 'Convertir', 'MP4, MOV, WEBM, GIF o sacar el audio', ['video'], 'f'], ['video', 'Cortar y encuadrar', 'Y pasarlo a 9:16', ['video'], 'vtrim'],
     ['comprimir', 'Comprimir', 'Más liviano', ['video'], 'vcompress'], ['texto', 'A texto', 'Subtítulos .srt', ['video'], 'transcribe'],
     ['mix', 'Audio + video', 'Reemplazar o sumar el sonido', ['video', 'audio'], 'mix'], ['mute', 'Sin audio', 'El video mudo', ['video'], 'mute'],
     ['stems', 'Stems', 'Del audio del video', ['video'], 'stems'], ['midi', 'A MIDI', 'Del audio del video', ['video'], 'midi']],

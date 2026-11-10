@@ -1,29 +1,38 @@
 {
- "version": "1.18.0",
+ "version": "1.19.0",
  "date": "2026-11-10",
  "notes": [
-  "Quitar fondo: sacale el fondo a una foto y queda un PNG transparente (personas, objetos, comida, autos…).",
-  "La primera vez baja la IA (170 MB); después anda sin internet.",
-  "\"Fondo\" ahora se llama \"Poner fondo\" en el hub."
+  "Editor de video: uní videos, fotos y música en una línea de tiempo con varias pistas.",
+  "Acortá, cortá, mové, duplicá y sacá clips; volumen y fundidos; videos encima a pantalla completa o en recuadro.",
+  "Formato final: como el primero, 16:9, 9:16 o 1:1. Sale un MP4 y los originales no se tocan."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
-  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.18.0/MIXTAPE-Windows.exe",
-  "size": 394110191
+  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.0/MIXTAPE-Windows.exe",
+  "size": 394029116
  },
  "mac": {
-  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.18.0/MIXTAPE-Mac.dmg",
-  "size": 326297222
+  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.0/MIXTAPE-Mac.dmg",
+  "size": 326208510
  },
  "extras": [
   {
    "name": "Paquete MIDI Pro",
    "desc": "Para Windows: piano y voz cantada a MIDI con mucha más precisión. Va en la carpeta MIXTAPE.",
-   "url": "https://github.com/Santi-br/mixtape/releases/download/v1.18.0/MIXTAPE-MIDI-Pro.exe",
+   "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.0/MIXTAPE-MIDI-Pro.exe",
    "size": 46912908
   }
  ],
  "history": [
+  {
+   "version": "1.18.0",
+   "date": "2026-11-10",
+   "notes": [
+    "Quitar fondo: sacale el fondo a una foto y queda un PNG transparente (personas, objetos, comida, autos…).",
+    "La primera vez baja la IA (170 MB); después anda sin internet.",
+    "\"Fondo\" ahora se llama \"Poner fondo\" en el hub."
+   ]
+  },
   {
    "version": "1.17.0",
    "date": "2026-11-09",
@@ -66,5 +75,11 @@
     "Uní fotos y PDF en un solo PDF, eligiendo el orden."
    ]
   }
- ]
+ ],
+ "patch": {
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.0.tar.gz",
+  "size": 433478,
+  "sha256": "970d3f769b27fee5460b527621b2915301601ed6b68e9e08540b5f34382773c5",
+  "base": "1.19.0"
+ }
 }
