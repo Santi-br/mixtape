@@ -1,10 +1,9 @@
 {
- "version": "1.19.0",
+ "version": "1.19.1",
  "date": "2026-11-10",
  "notes": [
-  "Editor de video: uní videos, fotos y música en una línea de tiempo con varias pistas.",
-  "Acortá, cortá, mové, duplicá y sacá clips; volumen y fundidos; videos encima a pantalla completa o en recuadro.",
-  "Formato final: como el primero, 16:9, 9:16 o 1:1. Sale un MP4 y los originales no se tocan."
+  "Al arrastrar la línea blanca (o un clip) podés salirte de la línea de tiempo y sigue igual, en el editor de video y al recortar.",
+  "Editor de video: zoom con Ctrl + rueda del mouse (o pellizcando el trackpad)."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
@@ -24,6 +23,15 @@
   }
  ],
  "history": [
+  {
+   "version": "1.19.0",
+   "date": "2026-11-10",
+   "notes": [
+    "Editor de video: uní videos, fotos y música en una línea de tiempo con varias pistas.",
+    "Acortá, cortá, mové, duplicá y sacá clips; volumen y fundidos; videos encima a pantalla completa o en recuadro.",
+    "Formato final: como el primero, 16:9, 9:16 o 1:1. Sale un MP4 y los originales no se tocan."
+   ]
+  },
   {
    "version": "1.18.0",
    "date": "2026-11-10",
@@ -77,9 +85,9 @@
   }
  ],
  "patch": {
-  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.0.tar.gz",
-  "size": 433478,
-  "sha256": "970d3f769b27fee5460b527621b2915301601ed6b68e9e08540b5f34382773c5",
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.1.tar.gz",
+  "size": 433750,
+  "sha256": "f0315f6cc4885bef7c3ef81f68874805b1ce097bae86701c5869b6850a5f6f56",
   "base": "1.19.0"
  }
 }
