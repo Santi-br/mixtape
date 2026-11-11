@@ -2,23 +2,24 @@
  "version": "1.19.4",
  "date": "2026-11-10",
  "notes": [
+  "Arreglo: en Windows las actualizaciones automáticas no se instalaban y te mandaban a la página. Bajá esta completa una vez y de acá en adelante se actualiza sola.",
   "Personalizá el inicio: elegí qué tapas aparecen y en qué orden (✎ personalizar abajo de las tapas, o clic derecho en una tapa). Podés sumar cualquier herramienta de Todas.",
   "Con la ventana maximizada o en pantalla completa el living ya no se ve gigante: queda a buen tamaño y centrado."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
-  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.0/MIXTAPE-Windows.exe",
-  "size": 394029116
+  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-Windows.exe",
+  "size": 394033680
  },
  "mac": {
-  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.0/MIXTAPE-Mac.dmg",
-  "size": 326208510
+  "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-Mac.dmg",
+  "size": 326212758
  },
  "extras": [
   {
    "name": "Paquete MIDI Pro",
    "desc": "Para Windows: piano y voz cantada a MIDI con mucha más precisión. Va en la carpeta MIXTAPE.",
-   "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.0/MIXTAPE-MIDI-Pro.exe",
+   "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-MIDI-Pro.exe",
    "size": 46912908
   }
  ],
@@ -108,8 +109,8 @@
  ],
  "patch": {
   "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.4.tar.gz",
-  "size": 438953,
-  "sha256": "010634a34eb147809da4203168c4da18c53d46ee246284adcb3e3cedb2ba9e8d",
+  "size": 439359,
+  "sha256": "dcde262d9e4dd314ac4891beb3a47dc19436359ada8abf7277fcf578b43d9066",
   "base": "1.19.0"
  }
 }
