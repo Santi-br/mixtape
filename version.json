@@ -1,8 +1,8 @@
 {
- "version": "1.19.5",
+ "version": "1.19.6",
  "date": "2026-11-11",
  "notes": [
-  "Abajo a la derecha del hub se ve qué versión de MIXTAPE tenés."
+  "Editor de video: si arrastrás la línea blanca o un clip hasta el borde (o afuera), la línea de tiempo se va corriendo sola para ese lado y te sigue."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
@@ -22,6 +22,13 @@
   }
  ],
  "history": [
+  {
+   "version": "1.19.5",
+   "date": "2026-11-11",
+   "notes": [
+    "Abajo a la derecha del hub se ve qué versión de MIXTAPE tenés."
+   ]
+  },
   {
    "version": "1.19.4",
    "date": "2026-11-10",
@@ -114,9 +121,9 @@
   }
  ],
  "patch": {
-  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.5.tar.gz",
-  "size": 439545,
-  "sha256": "fccff3296048159fe828237d7d6a0b955e4216bc3a76b9701f0f6862caeeb48c",
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.6.tar.gz",
+  "size": 439837,
+  "sha256": "bb6ea0ba5e321a16e11233b6db40d156e44d6a9e4d729c684638a0b3e10a5796",
   "base": "1.19.0"
  }
 }
