@@ -1,10 +1,8 @@
 {
- "version": "1.20.4",
+ "version": "1.20.5",
  "date": "2026-11-18",
  "notes": [
-  "La tecla de la rueda puede ser una combinación: Ajustes → Combinación… y apretás las que quieras juntas (Ctrl + Shift + Tab, W + X + Y…). Para borrarla, la basurita roja al lado.",
-  "Tapas: la del medio hace su gesto cuando llega al centro y la que tenés abajo del mouse lo repite; los movimientos son más suaves.",
-  "En Todas las tapitas quedan quietas."
+  "El fondo del inicio vuelve a cambiar de color con cada tapa, como antes (sigue siendo liviano)."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
@@ -24,6 +22,15 @@
   }
  ],
  "history": [
+  {
+   "version": "1.20.4",
+   "date": "2026-11-18",
+   "notes": [
+    "La tecla de la rueda puede ser una combinación: Ajustes → Combinación… y apretás las que quieras juntas (Ctrl + Shift + Tab, W + X + Y…). Para borrarla, la basurita roja al lado.",
+    "Tapas: la del medio hace su gesto cuando llega al centro y la que tenés abajo del mouse lo repite; los movimientos son más suaves.",
+    "En Todas las tapitas quedan quietas."
+   ]
+  },
   {
    "version": "1.20.3",
    "date": "2026-11-18",
@@ -186,9 +193,9 @@
   }
  ],
  "patch": {
-  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.4.tar.gz",
-  "size": 735726,
-  "sha256": "29ad0e6ad2a91d624a4ff086a719f4ba1b55ab799fea0f8e9744b2599d06d11c",
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.5.tar.gz",
+  "size": 752103,
+  "sha256": "1d9f09b66f2ef484686d206f46f7c1209d2c3d9183b9decb94d7201ca7bbcd27",
   "base": "1.19.0"
  }
 }
