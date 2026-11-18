@@ -1,11 +1,9 @@
 {
- "version": "1.20.0",
+ "version": "1.20.1",
  "date": "2026-11-18",
  "notes": [
-  "Diseño nuevo: Vidrio. El inicio, las ventanas de las herramientas y los avisos de progreso ahora son de vidrio estriado con botones cromados.",
-  "Se ve oscuro o claro según tengas la compu en modo oscuro o claro.",
-  "En el inicio, atrás de todo va la tapa que elegiste, desenfocada; abajo podés soltar un archivo o ver los recientes.",
-  "¿Preferís el de antes? Ajustes → Diseño del inicio → Living."
+  "El inicio se acomoda a cualquier tamaño de ventana: maximizada las tapas se agrandan, y en ventanas chicas los paneles se reordenan (la ventana ahora se puede achicar bastante más).",
+  "Se sacó el diseño Living: queda solo Vidrio."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
@@ -25,6 +23,16 @@
   }
  ],
  "history": [
+  {
+   "version": "1.20.0",
+   "date": "2026-11-18",
+   "notes": [
+    "Diseño nuevo: Vidrio. El inicio, las ventanas de las herramientas y los avisos de progreso ahora son de vidrio estriado con botones cromados.",
+    "Se ve oscuro o claro según tengas la compu en modo oscuro o claro.",
+    "En el inicio, atrás de todo va la tapa que elegiste, desenfocada; abajo podés soltar un archivo o ver los recientes.",
+    "¿Preferís el de antes? Ajustes → Diseño del inicio → Living."
+   ]
+  },
   {
    "version": "1.19.9",
    "date": "2026-11-18",
@@ -152,9 +160,9 @@
   }
  ],
  "patch": {
-  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.0.tar.gz",
-  "size": 604428,
-  "sha256": "484555b2e4f0f5daef259ab94b6c7a40b8f9ec5e627834b413240981885ee664",
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.1.tar.gz",
+  "size": 593953,
+  "sha256": "e6aa347acfb0b34d1065fd9f280ebd86d87b55e286671b47035e0bdf0c382cb6",
   "base": "1.19.0"
  }
 }
