@@ -1,8 +1,9 @@
 {
- "version": "1.20.5",
+ "version": "1.20.6",
  "date": "2026-11-18",
  "notes": [
-  "El fondo del inicio vuelve a cambiar de color con cada tapa, como antes (sigue siendo liviano)."
+  "Tapas nuevas de metal cepillado, del color de cada herramienta (también las de Todas).",
+  "Al llegar al centro o al pasar el mouse, un brillo cruza la tapa y el dibujo hace su gesto."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
@@ -22,6 +23,13 @@
   }
  ],
  "history": [
+  {
+   "version": "1.20.5",
+   "date": "2026-11-18",
+   "notes": [
+    "El fondo del inicio vuelve a cambiar de color con cada tapa, como antes (sigue siendo liviano)."
+   ]
+  },
   {
    "version": "1.20.4",
    "date": "2026-11-18",
@@ -193,9 +201,9 @@
   }
  ],
  "patch": {
-  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.5.tar.gz",
-  "size": 752103,
-  "sha256": "1d9f09b66f2ef484686d206f46f7c1209d2c3d9183b9decb94d7201ca7bbcd27",
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.6.tar.gz",
+  "size": 675192,
+  "sha256": "6afa27b1383bc5d25701d8a0633311e457fd9894bc20cbc30343ba0ed42e8a03",
   "base": "1.19.0"
  }
 }
