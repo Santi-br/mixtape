@@ -1,8 +1,11 @@
 {
- "version": "1.19.9",
+ "version": "1.20.0",
  "date": "2026-11-18",
  "notes": [
-  "Podés elegir cualquier tecla para abrir la rueda (Shift sigue siendo la de siempre): Ajustes → \"Otra…\" y apretás la que quieras, o en el menú del ícono → Tecla para abrir la rueda → Elegir otra tecla."
+  "Diseño nuevo: Vidrio. El inicio, las ventanas de las herramientas y los avisos de progreso ahora son de vidrio estriado con botones cromados.",
+  "Se ve oscuro o claro según tengas la compu en modo oscuro o claro.",
+  "En el inicio, atrás de todo va la tapa que elegiste, desenfocada; abajo podés soltar un archivo o ver los recientes.",
+  "¿Preferís el de antes? Ajustes → Diseño del inicio → Living."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
@@ -22,6 +25,13 @@
   }
  ],
  "history": [
+  {
+   "version": "1.19.9",
+   "date": "2026-11-18",
+   "notes": [
+    "Podés elegir cualquier tecla para abrir la rueda (Shift sigue siendo la de siempre): Ajustes → \"Otra…\" y apretás la que quieras, o en el menú del ícono → Tecla para abrir la rueda → Elegir otra tecla."
+   ]
+  },
   {
    "version": "1.19.8",
    "date": "2026-11-17",
@@ -142,9 +152,9 @@
   }
  ],
  "patch": {
-  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.9.tar.gz",
-  "size": 486887,
-  "sha256": "342f77eceabb11f8928118f43f21aa36cbb5c6500fcc9e5b7d1c8478df2f1d4d",
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.0.tar.gz",
+  "size": 604428,
+  "sha256": "484555b2e4f0f5daef259ab94b6c7a40b8f9ec5e627834b413240981885ee664",
   "base": "1.19.0"
  }
 }
