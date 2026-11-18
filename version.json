@@ -1,9 +1,8 @@
 {
- "version": "1.20.6",
+ "version": "1.20.7",
  "date": "2026-11-18",
  "notes": [
-  "Tapas nuevas de metal cepillado, del color de cada herramienta (también las de Todas).",
-  "Al llegar al centro o al pasar el mouse, un brillo cruza la tapa y el dibujo hace su gesto."
+  "Las tapas solo se mueven mientras tenés el mouse encima; si no, quedan quietas."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
@@ -23,6 +22,14 @@
   }
  ],
  "history": [
+  {
+   "version": "1.20.6",
+   "date": "2026-11-18",
+   "notes": [
+    "Tapas nuevas de metal cepillado, del color de cada herramienta (también las de Todas).",
+    "Al llegar al centro o al pasar el mouse, un brillo cruza la tapa y el dibujo hace su gesto."
+   ]
+  },
   {
    "version": "1.20.5",
    "date": "2026-11-18",
@@ -201,9 +208,9 @@
   }
  ],
  "patch": {
-  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.6.tar.gz",
-  "size": 675192,
-  "sha256": "6afa27b1383bc5d25701d8a0633311e457fd9894bc20cbc30343ba0ed42e8a03",
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.7.tar.gz",
+  "size": 675091,
+  "sha256": "ec4a5767c0fe460cae645f96a1b1321dcad656381a43008d1d43be556861cb46",
   "base": "1.19.0"
  }
 }
