@@ -1,8 +1,8 @@
 {
- "version": "1.19.8",
- "date": "2026-11-17",
+ "version": "1.19.9",
+ "date": "2026-11-18",
  "notes": [
-  "Nuevo \"Acerca de MIXTAPE\" (menú del ícono y en Ayuda) con la lista de licencias de terceros: los programas y modelos de IA que usa MIXTAPE, sus autores y licencias."
+  "Podés elegir cualquier tecla para abrir la rueda (Shift sigue siendo la de siempre): Ajustes → \"Otra…\" y apretás la que quieras, o en el menú del ícono → Tecla para abrir la rueda → Elegir otra tecla."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
@@ -22,6 +22,13 @@
   }
  ],
  "history": [
+  {
+   "version": "1.19.8",
+   "date": "2026-11-17",
+   "notes": [
+    "Nuevo \"Acerca de MIXTAPE\" (menú del ícono y en Ayuda) con la lista de licencias de terceros: los programas y modelos de IA que usa MIXTAPE, sus autores y licencias."
+   ]
+  },
   {
    "version": "1.19.7",
    "date": "2026-11-17",
@@ -135,9 +142,9 @@
   }
  ],
  "patch": {
-  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.8.tar.gz",
-  "size": 484836,
-  "sha256": "368b8a6f9ef08f6058f19d6850d16a88fbcef7c2656789228b90fd77a9ad1eb2",
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.19.9.tar.gz",
+  "size": 486887,
+  "sha256": "342f77eceabb11f8928118f43f21aa36cbb5c6500fcc9e5b7d1c8478df2f1d4d",
   "base": "1.19.0"
  }
 }
