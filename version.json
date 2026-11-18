@@ -1,10 +1,10 @@
 {
- "version": "1.20.3",
+ "version": "1.20.4",
  "date": "2026-11-18",
  "notes": [
-  "Más fluida y gasta mucho menos: el inicio casi no usa la placa de video cuando está quieto y pasar de tapa es bastante más liviano (las texturas ahora vienen listas, sin calcularse en vivo).",
-  "El inicio vuelve a sus proporciones: ya no se agranda de más maximizado y al abrir aparece directo en su tamaño.",
-  "Tapas unificadas con el vidrio: misma familia de colores azul/violeta, esquinas redondeadas con canto de vidrio y el dibujo como ícono de línea."
+  "La tecla de la rueda puede ser una combinación: Ajustes → Combinación… y apretás las que quieras juntas (Ctrl + Shift + Tab, W + X + Y…). Para borrarla, la basurita roja al lado.",
+  "Tapas: la del medio hace su gesto cuando llega al centro y la que tenés abajo del mouse lo repite; los movimientos son más suaves.",
+  "En Todas las tapitas quedan quietas."
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
@@ -24,6 +24,15 @@
   }
  ],
  "history": [
+  {
+   "version": "1.20.3",
+   "date": "2026-11-18",
+   "notes": [
+    "Más fluida y gasta mucho menos: el inicio casi no usa la placa de video cuando está quieto y pasar de tapa es bastante más liviano (las texturas ahora vienen listas, sin calcularse en vivo).",
+    "El inicio vuelve a sus proporciones: ya no se agranda de más maximizado y al abrir aparece directo en su tamaño.",
+    "Tapas unificadas con el vidrio: misma familia de colores azul/violeta, esquinas redondeadas con canto de vidrio y el dibujo como ícono de línea."
+   ]
+  },
   {
    "version": "1.20.2",
    "date": "2026-11-18",
@@ -177,9 +186,9 @@
   }
  ],
  "patch": {
-  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.3.tar.gz",
-  "size": 733622,
-  "sha256": "d25ef6860b19d5edab40f8c54b3a97f807a1eee3df8196f911a2c966653becdd",
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.4.tar.gz",
+  "size": 735726,
+  "sha256": "29ad0e6ad2a91d624a4ff086a719f4ba1b55ab799fea0f8e9744b2599d06d11c",
   "base": "1.19.0"
  }
 }
