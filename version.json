@@ -1,9 +1,9 @@
 {
- "version": "1.20.1",
+ "version": "1.20.2",
  "date": "2026-11-18",
  "notes": [
-  "El inicio se acomoda a cualquier tamaño de ventana: maximizada las tapas se agrandan, y en ventanas chicas los paneles se reordenan (la ventana ahora se puede achicar bastante más).",
-  "Se sacó el diseño Living: queda solo Vidrio."
+  "Tapas nuevas, de peluche: cada herramienta con su color y su dibujo (también las chiquitas de Todas).",
+  "Al pasar el mouse por una tapa el pelo se mueve y el dibujo hace su gesto: las flechas van y vienen, el micrófono se balancea, los stems laten…"
  ],
  "page": "https://santi-br.github.io/mixtape/",
  "windows": {
@@ -23,6 +23,14 @@
   }
  ],
  "history": [
+  {
+   "version": "1.20.1",
+   "date": "2026-11-18",
+   "notes": [
+    "El inicio se acomoda a cualquier tamaño de ventana: maximizada las tapas se agrandan, y en ventanas chicas los paneles se reordenan (la ventana ahora se puede achicar bastante más).",
+    "Se sacó el diseño Living: queda solo Vidrio."
+   ]
+  },
   {
    "version": "1.20.0",
    "date": "2026-11-18",
@@ -160,9 +168,9 @@
   }
  ],
  "patch": {
-  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.1.tar.gz",
-  "size": 593953,
-  "sha256": "e6aa347acfb0b34d1065fd9f280ebd86d87b55e286671b47035e0bdf0c382cb6",
+  "url": "https://santi-br.github.io/mixtape/actualizaciones/1.20.2.tar.gz",
+  "size": 585244,
+  "sha256": "f0569a38e5442647b8bc9c651bb3ccb65c1842d9f57d34dccd57befcb5c5249d",
   "base": "1.19.0"
  }
 }
