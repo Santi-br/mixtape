@@ -1,7 +1,7 @@
 {
-  "version": "1.21.5",
+  "version": "1.22.0",
   "date": "2026-11-20",
-  "notes": "Mejorar video: nuevo modo Rápida (casi el doble de rápido); el de antes queda como Normal.",
+  "notes": "A MIDI: nuevo modelo de batería (dettato-drums) listo para la versión de venta.",
   "page": "https://santi-br.github.io/mixtape/",
   "windows": {
     "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-Windows.exe",
@@ -20,6 +20,11 @@
     }
   ],
   "history": [
+    {
+      "version": "1.21.5",
+      "date": "2026-11-20",
+      "notes": "Mejorar video: nuevo modo Rápida (casi el doble de rápido); el de antes queda como Normal."
+    },
     {
       "version": "1.21.4",
       "date": "2026-11-19",
@@ -264,9 +269,9 @@
     }
   ],
   "patch": {
-    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.21.5.tar.gz",
-    "size": 10325210,
-    "sha256": "d7e03a82b7893563eb91dd0f73a0180bdc4cd7689c0079e908e197904a7c01e4",
+    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.22.0.tar.gz",
+    "size": 11035045,
+    "sha256": "1df492d6561832cd184fcd7d54dc1923eebc5c20894570cdb3d0d384ee3d55c3",
     "base": "1.19.0"
   }
 }
