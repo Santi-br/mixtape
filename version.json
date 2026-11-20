@@ -1,7 +1,7 @@
 {
-  "version": "1.22.4",
+  "version": "1.22.5",
   "date": "2026-11-20",
-  "notes": "La rueda aparece al instante (Windows tardaba 1-2 s en darle el archivo).",
+  "notes": "Se sacó \"Medir la rueda\" del menú.",
   "page": "https://santi-br.github.io/mixtape/",
   "windows": {
     "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-Windows.exe",
@@ -20,6 +20,11 @@
     }
   ],
   "history": [
+    {
+      "version": "1.22.4",
+      "date": "2026-11-20",
+      "notes": "La rueda aparece al instante (Windows tardaba 1-2 s en darle el archivo)."
+    },
     {
       "version": "1.22.3",
       "date": "2026-11-20",
@@ -289,9 +294,9 @@
     }
   ],
   "patch": {
-    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.22.4.tar.gz",
-    "size": 11037848,
-    "sha256": "1accf95739f772509f673fd683d43472bc172ca1eaee475a98d96ac4124632cb",
+    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.22.5.tar.gz",
+    "size": 11037751,
+    "sha256": "fad0c558d2e1f6aa060acd11b51e7f112043a4605d578974e31a88a35a3c52e5",
     "base": "1.19.0"
   }
 }
