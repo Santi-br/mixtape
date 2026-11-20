@@ -1,7 +1,7 @@
 {
-  "version": "1.21.2",
+  "version": "1.21.3",
   "date": "2026-11-19",
-  "notes": "Mejorar video: elige sola la placa de video más rápida (en notebooks con dos placas usaba la integrada).",
+  "notes": "Mejorar video más rápido todavía: la placa trabaja en media precisión y achica el resultado ella misma.",
   "page": "https://santi-br.github.io/mixtape/",
   "windows": {
     "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-Windows.exe",
@@ -20,6 +20,11 @@
     }
   ],
   "history": [
+    {
+      "version": "1.21.2",
+      "date": "2026-11-19",
+      "notes": "Mejorar video: elige sola la placa de video más rápida (en notebooks con dos placas usaba la integrada)."
+    },
     {
       "version": "1.21.1",
       "date": "2026-11-19",
@@ -249,9 +254,9 @@
     }
   ],
   "patch": {
-    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.21.2.tar.gz",
-    "size": 1214394,
-    "sha256": "d1b3c943e64df59c5f77c6883db7126e13512aede8dc45d645ccc8f10dc01321",
+    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.21.3.tar.gz",
+    "size": 10325005,
+    "sha256": "c554653f449b934c14668fed65bdee079a4aeecb07a81b858ff9453b4dee98b8",
     "base": "1.19.0"
   }
 }
