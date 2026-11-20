@@ -1,7 +1,7 @@
 {
-  "version": "1.21.4",
-  "date": "2026-11-19",
-  "notes": "Arreglado: cerrar una ventana de edición con la X tiraba un error.",
+  "version": "1.21.5",
+  "date": "2026-11-20",
+  "notes": "Mejorar video: nuevo modo Rápida (casi el doble de rápido); el de antes queda como Normal.",
   "page": "https://santi-br.github.io/mixtape/",
   "windows": {
     "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-Windows.exe",
@@ -20,6 +20,11 @@
     }
   ],
   "history": [
+    {
+      "version": "1.21.4",
+      "date": "2026-11-19",
+      "notes": "Arreglado: cerrar una ventana de edición con la X tiraba un error."
+    },
     {
       "version": "1.21.3",
       "date": "2026-11-19",
@@ -259,9 +264,9 @@
     }
   ],
   "patch": {
-    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.21.4.tar.gz",
-    "size": 10325082,
-    "sha256": "2bd2a9d95c74cdf386326c1fc14840384e1032c52ae2457d6e6da74764d1e8db",
+    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.21.5.tar.gz",
+    "size": 10325210,
+    "sha256": "d7e03a82b7893563eb91dd0f73a0180bdc4cd7689c0079e908e197904a7c01e4",
     "base": "1.19.0"
   }
 }
