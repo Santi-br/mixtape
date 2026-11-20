@@ -1,7 +1,7 @@
 {
-  "version": "1.22.2",
+  "version": "1.22.3",
   "date": "2026-11-20",
-  "notes": "Nuevo en el menú del ícono: \"Medir la rueda…\", para ver qué paso tarda cuando la rueda demora en aparecer.",
+  "notes": "Mejorar video: en videos que ya son grandes se mezcla con el original para no perder detalle (ya no queda \"pintado\").",
   "page": "https://santi-br.github.io/mixtape/",
   "windows": {
     "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-Windows.exe",
@@ -20,6 +20,11 @@
     }
   ],
   "history": [
+    {
+      "version": "1.22.2",
+      "date": "2026-11-20",
+      "notes": "Nuevo en el menú del ícono: \"Medir la rueda…\", para ver qué paso tarda cuando la rueda demora en aparecer."
+    },
     {
       "version": "1.22.1",
       "date": "2026-11-20",
@@ -279,9 +284,9 @@
     }
   ],
   "patch": {
-    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.22.2.tar.gz",
-    "size": 11036956,
-    "sha256": "4f301ccbfb5f7d9a79ccaafdf2c9cfbd7ae0178e4313b92940aa388371ac6d22",
+    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.22.3.tar.gz",
+    "size": 11037781,
+    "sha256": "51a5724d7554cd750ba7f3cbc2c02e0d18e1f4343460f861d19ff78cb4d25bab",
     "base": "1.19.0"
   }
 }
