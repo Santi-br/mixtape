@@ -1,7 +1,7 @@
 {
-  "version": "1.22.5",
-  "date": "2026-11-20",
-  "notes": "Se sacó \"Medir la rueda\" del menú.",
+  "version": "1.23.0",
+  "date": "2026-11-22",
+  "notes": "Preparada para las versiones Gratis / Pro / Premium / Estudio (solo en la versión de venta; la tuya trae todo).",
   "page": "https://santi-br.github.io/mixtape/",
   "windows": {
     "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-Windows.exe",
@@ -20,6 +20,11 @@
     }
   ],
   "history": [
+    {
+      "version": "1.22.5",
+      "date": "2026-11-20",
+      "notes": "Se sacó \"Medir la rueda\" del menú."
+    },
     {
       "version": "1.22.4",
       "date": "2026-11-20",
@@ -294,9 +299,9 @@
     }
   ],
   "patch": {
-    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.22.5.tar.gz",
-    "size": 11037751,
-    "sha256": "fad0c558d2e1f6aa060acd11b51e7f112043a4605d578974e31a88a35a3c52e5",
+    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.23.0.tar.gz",
+    "size": 11046783,
+    "sha256": "5099db8c2e1c47471b1609bf45c744beb74e23a465181b49f30e81692226de44",
     "base": "1.19.0"
   }
 }
