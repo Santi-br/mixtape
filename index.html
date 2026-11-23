@@ -5,6 +5,8 @@
 <title>MIXTAPE — para amigos</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#140f2a">
+<style>html,body{background:#140f2a}</style>
 <link rel="icon" href="icon.png">
 <link rel="apple-touch-icon" href="icon-512.png">
 <script src="./support.js"></script>
@@ -699,6 +701,12 @@ let V=null;const urls={};
 fetch('version.json',{cache:'no-store'}).then(r=>r.json()).then(v=>{V=v;urls.win=(v.windows||{}).url;urls.mac=(v.mac||{}).url;
   const mp=(v.extras||[]).find?.(x=>/midi/i.test(x.name||x.label||x.url||''));urls.midipro=mp?mp.url:'https://github.com/Santi-br/mixtape/releases/latest/download/MIXTAPE-MIDI-Pro.exe';paintNovs();}).catch(()=>{});
 document.addEventListener('click',(e)=>{const a=e.target.closest&&e.target.closest('[data-dl]');if(!a)return;const u=urls[a.getAttribute('data-dl')];if(u){e.preventDefault();e.stopPropagation();location.href=u;}},true);
+// color de fondo del celu (barra de arriba y lo que se ve al estirar): igual al de la página, de noche y de día
+const tc=document.querySelector('meta[name="theme-color"]');
+function syncBg(){const mx=document.querySelector('.mx');if(!mx)return;const c=getComputedStyle(mx).backgroundColor;if(!c||c==='rgba(0, 0, 0, 0)')return;
+  if(document.documentElement.style.backgroundColor!==c){document.documentElement.style.backgroundColor=c;document.body.style.backgroundColor=c;if(tc)tc.setAttribute('content',c);}}
+new MutationObserver(syncBg).observe(document.body,{attributes:true,childList:true,subtree:true,attributeFilter:['class','style']});
+setInterval(syncBg,1000);
 // novedades
 const esc=(t)=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fecha=(d)=>{try{return new Date(d+'T12:00:00').toLocaleDateString('es-AR',{day:'numeric',month:'long',year:'numeric'})}catch(e){return d}};
