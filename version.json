@@ -4,8 +4,8 @@
   "notes": "Cambio interno de seguridad de las licencias.",
   "page": "https://santi-br.github.io/mixtape/",
   "windows": {
-    "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-Windows.exe",
-    "size": 394033680
+    "url": "https://github.com/Santi-br/mixtape/releases/download/v1.23.1/MIXTAPE-Windows.exe",
+    "size": 392374110
   },
   "mac": {
     "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-Mac.dmg",
