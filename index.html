@@ -10,6 +10,19 @@
 <link rel="icon" href="icon.png">
 <link rel="apple-touch-icon" href="icon-512.png">
 <script src="./support.js"></script>
+
+<style id="mx-fluido">
+
+.navbar{will-change:transform}
+@media (max-width:820px),(hover:none){
+ .rib,.glass,.nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+ .glass2{backdrop-filter:blur(8px)!important;-webkit-backdrop-filter:blur(8px)!important}
+ .navbar.isla.sc .nav{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:color-mix(in srgb,var(--bg) 94%,transparent)!important}
+ .rib,.glass{background-color:color-mix(in srgb,var(--bg) 70%,transparent)}
+ .mx{background-attachment:scroll}
+}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
 </head>
 <body>
 <x-dc>
@@ -459,9 +472,15 @@ class Component extends DCLogic {
       var sc = y > 40, hid = sc && y > last + 2 ? true : (y < last - 2 ? false : self.state.navHid);
       if (!sc) hid = false;
       last = y;
-      if (sc !== self.state.navSc || hid !== self.state.navHid) self.setState({ navSc: sc, navHid: hid });
+      if (sc !== self.state.navSc || hid !== self.state.navHid) {
+        self.state.navSc = sc; self.state.navHid = hid;
+        var nb = document.querySelector('.navbar');
+        if (nb) { nb.classList.toggle('sc', sc); nb.classList.toggle('hid', hid); } else self.setState({ navSc: sc, navHid: hid });
+      }
     };
-    window.addEventListener('scroll', this._onScroll, true);
+    var raw = this._onScroll, tick = false, ev = null;
+    this._onScroll = function (e) { ev = e; if (tick) return; tick = true; requestAnimationFrame(function () { tick = false; raw(ev); }); };
+    window.addEventListener('scroll', this._onScroll, { capture: true, passive: true });
   }
   stepRueda(st) {
     var rr = this.state.rueda; if (!rr) return;
@@ -469,7 +488,7 @@ class Component extends DCLogic {
     var nf = Math.max(0, Math.min(ff.acts.length - 1, rr.front + st));
     if (nf !== rr.front) this.setState({ rueda: Object.assign({}, rr, { front: nf }) });
   }
-  componentWillUnmount() { if (this.timer) clearInterval(this.timer); if (this._onScroll) window.removeEventListener('scroll', this._onScroll, true); }
+  componentWillUnmount() { if (this.timer) clearInterval(this.timer); if (this._onScroll) window.removeEventListener('scroll', this._onScroll, { capture: true }); }
   fileById(id) {
     var D = this.data().demo;
     var f = D.files.filter(function (x) { return x.id === id; })[0];
@@ -709,8 +728,10 @@ document.addEventListener('click',(e)=>{const a=e.target.closest&&e.target.close
 const tc=document.querySelector('meta[name="theme-color"]');
 function syncBg(){const mx=document.querySelector('.mx');if(!mx)return;const c=getComputedStyle(mx).backgroundColor;if(!c||c==='rgba(0, 0, 0, 0)')return;
   if(document.documentElement.style.backgroundColor!==c){document.documentElement.style.backgroundColor=c;document.body.style.backgroundColor=c;document.documentElement.style.setProperty('--mxbg',c);if(tc)tc.setAttribute('content',c);}}
-new MutationObserver(syncBg).observe(document.body,{attributes:true,childList:true,subtree:true,attributeFilter:['class','style']});
-setInterval(syncBg,1000);
+let sbT=0;const sbLater=()=>{clearTimeout(sbT);sbT=setTimeout(syncBg,60);setTimeout(syncBg,500);};
+document.addEventListener('click',sbLater,true);
+(function first(n){syncBg();if(n>0)setTimeout(()=>first(n-1),400);})(6);
+{const mo=new MutationObserver(()=>{const mx=document.querySelector('.mx');if(mx){mo.disconnect();syncBg();new MutationObserver(sbLater).observe(mx,{attributes:true,attributeFilter:['style','class']});}});mo.observe(document.body,{childList:true,subtree:true});}
 // novedades
 const esc=(t)=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fecha=(d)=>{try{return new Date(d+'T12:00:00').toLocaleDateString('es-AR',{day:'numeric',month:'long',year:'numeric'})}catch(e){return d}};
@@ -719,7 +740,7 @@ function paintNovs(){const box=document.getElementById('novs');if(!box||!V)retur
   const html=list.map(x=>'<div class="nv"><b>'+esc(x.version)+'</b><span>'+esc(x.notes||'')+(x.date?'<small>'+esc(fecha(x.date))+'</small>':'')+'</span></div>').join('');
   if(box.getAttribute('data-v')!==V.version||!box.firstChild){box.innerHTML=html;box.setAttribute('data-v',V.version);}}
 // el diseño se dibuja después: esperar a que aparezca la caja y volver a llenarla si se redibuja
-new MutationObserver(()=>{const b=document.getElementById('novs');if(b&&!b.firstChild)paintNovs();}).observe(document.body,{childList:true,subtree:true});
+{let nT=0;new MutationObserver(()=>{if(nT)return;nT=requestAnimationFrame(()=>{nT=0;const b=document.getElementById('novs');if(b&&!b.firstChild)paintNovs();});}).observe(document.body,{childList:true,subtree:true});}
 })();
 </script>
 </body>
