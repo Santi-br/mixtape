@@ -268,7 +268,22 @@ box-shadow:0 40px 90px var(--shadow)}
 .desk::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 6px,rgba(0,0,0,.06) 6px 7px,transparent 7px 13px);pointer-events:none}
 .desk-note{position:absolute;color:#fff;font:italic 400 clamp(22px,2.4vw,30px)/1 'Instrument Serif',Georgia,serif;letter-spacing:-.3px;transform:rotate(-4deg);display:flex;flex-direction:row-reverse;align-items:flex-start;gap:4px;pointer-events:none;transition:opacity .4s;text-shadow:0 2px 8px rgba(0,0,0,.25)}
 .desk-note svg{margin-top:16px}
-.fi{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:7px;width:112px;padding:8px 4px;border-radius:12px;cursor:grab;user-select:none;transition:left .45s cubic-bezier(.22,1,.36,1),top .45s cubic-bezier(.22,1,.36,1),background .2s}
+.fi{position:absolute;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:7px;width:112px;padding:8px 4px;border-radius:12px;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none;transition:left .5s cubic-bezier(.22,1,.36,1),top .5s cubic-bezier(.22,1,.36,1),background .2s,opacity .3s}
+.fi.dragging{transition:background .2s;z-index:4;cursor:grabbing}
+.fi .fi-ic{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s}
+.fi.dragging .fi-ic{transform:scale(1.08) rotate(-2deg);box-shadow:0 22px 40px rgba(0,0,0,.4),inset 0 0 0 1px rgba(255,255,255,.45)}
+.fi.dragging.withr{opacity:.55}
+.fi-x{position:absolute;top:0;right:12px;width:22px;height:22px;border-radius:50%;border:0;background:rgba(20,16,40,.75);color:#fff;font:600 14px/22px 'Inter Tight',sans-serif;cursor:pointer;opacity:0;transform:scale(.8);transition:opacity .2s,transform .2s;padding:0}
+.fi:hover .fi-x{opacity:1;transform:none}
+.fi-x:hover{background:#ff4d6d}
+.vshift{display:none;position:absolute;left:16px;bottom:16px;z-index:6;align-items:center;gap:6px;padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.35);background:rgba(20,16,40,.45);color:#fff;font:600 14px 'Inter Tight',sans-serif;touch-action:none;transition:background .2s,transform .15s,box-shadow .2s}
+.vshift span{font-size:16px}
+.vshift.on{background:#fff;color:#1b1538;box-shadow:0 0 0 4px rgba(255,255,255,.25)}
+.clear-res{position:absolute;right:16px;bottom:16px;z-index:6;border:0;border-radius:999px;padding:9px 16px;font:500 13px 'Inter Tight',sans-serif;cursor:pointer;animation:pop .4s ease}
+.clear-res:hover{background:rgba(255,77,109,.7)}
+.n-touch{display:none}
+.desk.touch .vshift{display:flex}.desk.touch .fi-x{opacity:1;transform:none}.desk.touch .n-pc{display:none}.desk.touch .n-touch{display:inline}
+@media (max-width:720px){.vshift{display:flex}.fi-x{opacity:1;transform:none}.n-pc{display:none}.n-touch{display:inline}}
 .fi:hover{background:rgba(255,255,255,.12)}
 .fi.sel{background:rgba(255,255,255,.2);box-shadow:inset 0 0 0 1px rgba(255,255,255,.4)}
 .fi.new .fi-ic{animation:pop .6s cubic-bezier(.2,1.4,.4,1)}
@@ -349,17 +364,20 @@ box-shadow:0 40px 90px var(--shadow)}
 <!-- DEMO -->
 <section id="que" style="padding-top: clamp(40px, 6vw, 72px)">
 <div class="wrap">
-<div tabindex="0" onKeyDown="{{onKey}}" onDragOver="{{onOver}}" onDrop="{{onDrop}}" onClick="{{onDeskClick}}" class="desk">
-<div class="desk-note" style="{{noteStyle}}"><span>Arrastrá este archivo<br>y apretá Shift</span>
+<div tabindex="0" onKeyDown="{{onKey}}" onPointerMove="{{pMove}}" onPointerUp="{{pUp}}" onPointerCancel="{{pCancel}}" onClick="{{onDeskClick}}" class="{{deskCls}}">
+<div class="desk-note" style="{{noteStyle}}"><span class="n-pc">Arrastrá este archivo<br>y apretá Shift</span><span class="n-touch">Tocá Shift y<br>arrastrá este archivo</span>
 <svg width="70" height="54" viewBox="0 0 70 54" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M66 6C46 4 24 14 9 36M9 36l1-12M9 36l12-3"/></svg></div>
 
 <sc-for list="{{files}}" as="f" hint-placeholder-count="5">
-<div draggable="true" onDragStart="{{f.dragStart}}" onDragEnd="{{f.dragEnd}}" onClick="{{f.pick}}" class="{{f.cls}}" style="{{f.style}}">
+<div onPointerDown="{{f.pDown}}" class="{{f.cls}}" style="{{f.style}}">
 <span class="fi-ic" style="{{f.icStyle}}"></span>
 <span class="fi-n">{{f.label}}</span>
+<sc-if value="{{f.isRes}}" hint-placeholder-val="{{ false }}"><button class="fi-x" onPointerDown="{{f.xDown}}" onClick="{{f.del}}" title="Borrar">×</button></sc-if>
 </div>
 </sc-for>
 
+<button class="{{vshiftCls}}" onPointerDown="{{vshiftDown}}"><span>⇧</span>Shift</button>
+<sc-if value="{{hasResults}}" hint-placeholder-val="{{ false }}"><button class="clear-res glass2" onClick="{{clearRes}}">Borrar resultados</button></sc-if>
 <sc-if value="{{showWork}}" hint-placeholder-val="{{ false }}">
 <div class="work glass2" style="{{workStyle}}"><span class="spin"></span><span>{{workText}}</span></div>
 </sc-if>
@@ -380,7 +398,7 @@ box-shadow:0 40px 90px var(--shadow)}
 </div>
 </sc-if>
 </div>
-<p class="desk-cap">Esta es una simulación de MIXTAPE: probá arrastrar un archivo y apretar <span class="cap">Shift</span>. En el celu, tocá un archivo.</p>
+<p class="desk-cap">Esta es una simulación de MIXTAPE: arrastrá un archivo y apretá <span class="cap">Shift</span>, como en la app. En el celu, tocá el botón Shift y después arrastrá.</p>
 </div>
 </section>
 
@@ -485,9 +503,10 @@ class Component extends DCLogic {
     var D = this.data();
     var pos = {};
     D.demo.files.forEach(function (f) { pos[f.id] = [f.x, f.y]; });
-    this.state = { theme: 'night', faq: 1, pos: pos, sel: null, drag: null, rueda: null, work: null, results: [], used: false, showVs: false, showCmp: false, navMode: 'd', sx: 'd', tab: 'all', legal: null, navSc: false, navHid: false };
+    this.state = { theme: 'night', faq: -1, pos: pos, sel: null, drag: null, rueda: null, work: null, results: [], used: false, vshift: false, touch: false, showVs: false, showCmp: false, navMode: 'd', sx: 'd', tab: 'all', legal: null, navSc: false, navHid: false };
   }
   componentDidMount() {
+    try { if (('ontouchstart' in window) || navigator.maxTouchPoints > 0 || (window.matchMedia && window.matchMedia('(pointer: coarse)').matches)) this.setState({ touch: true }); } catch (er) {}
     var self = this, last = 0;
     this._onScroll = function (e) {
       var t = e.target, y = (t && t.nodeType === 1) ? t.scrollTop : (document.scrollingElement || document.documentElement).scrollTop;
@@ -528,6 +547,13 @@ class Component extends DCLogic {
     var r = e.currentTarget.getBoundingClientRect();
     return [Math.max(0, Math.min(100, (e.clientX - r.left) / r.width * 100)), Math.max(0, Math.min(100, (e.clientY - r.top) / r.height * 100)), e.clientX];
   }
+  tryOpen(px) {
+    var dr = this._dr;
+    if (!dr || !dr.moved || this.state.rueda) return;
+    var f = this.fileById(dr.id);
+    if (!f || !f.acts) return;
+    this.open(dr.id, Math.max(28, Math.min(72, dr.x)), Math.max(40, Math.min(64, dr.y)), 'drag', px || dr.sx);
+  }
   open(id, x, y, mode, px) {
     var f = this.fileById(id);
     if (!f || !f.acts) return;
@@ -546,7 +572,7 @@ class Component extends DCLogic {
     }
     var base = s.pos[f.id] || [r.x, r.y];
     var nx = r.x, ny = r.y;
-    if (r.mode !== 'drag') { nx = base[0] > 72 ? base[0] - 20 : base[0] + 20; ny = base[1] > 72 ? base[1] - 15 : base[1] + 15; }
+    nx = base[0] > 70 ? base[0] - 22 : base[0] + 22; ny = base[1] > 70 ? base[1] - 16 : base[1] + 16;
     nx = Math.max(8, Math.min(92, nx)); ny = Math.max(10, Math.min(88, ny));
     this.setState({ rueda: null, work: { x: nx, y: ny, text: label } });
     if (this.timer) clearTimeout(this.timer);
@@ -569,16 +595,18 @@ class Component extends DCLogic {
       var p = s.pos[f.id] || [50, 50];
       return {
         label: f.label,
-        cls: 'fi' + (s.sel === f.id ? ' sel' : '') + (f.isNew ? ' new' : ''),
-        style: 'left: ' + p[0] + '%; top: ' + p[1] + '%' + (s.drag === f.id ? '; opacity: .45' : ''),
+        cls: 'fi' + (s.sel === f.id ? ' sel' : '') + (f.isNew ? ' new' : '') + (s.drag && s.drag.id === f.id && s.drag.moved ? ' dragging' + (s.rueda ? ' withr' : '') : ''),
+        style: (s.drag && s.drag.id === f.id && s.drag.moved) ? 'left: ' + s.drag.x + '%; top: ' + s.drag.y + '%' : 'left: ' + p[0] + '%; top: ' + p[1] + '%',
         icStyle: self.thumb(f),
-        dragStart: function (e) { try { e.dataTransfer.setData('text/plain', f.id); e.dataTransfer.effectAllowed = 'move'; } catch (err) {} self.setState({ drag: f.id, sel: f.id, rueda: null }); },
-        dragEnd: function () { var r = self.state.rueda; self.setState({ drag: null, rueda: r && r.mode === 'drag' ? null : r }); },
-        pick: function (e) {
-          e.stopPropagation();
-          if (!f.acts) { self.setState({ sel: f.id, rueda: null }); return; }
-          var y = Math.max(40, Math.min(64, p[1]));
-          self.open(f.id, Math.max(28, Math.min(72, p[0])), y, 'tap', 0);
+        isRes: !f.acts,
+        xDown: function (e) { e.stopPropagation(); },
+        del: function (e) { e.stopPropagation(); self.setState({ results: self.state.results.filter(function (x) { return x.id !== f.id; }), sel: null }); },
+        pDown: function (e) {
+          if (e.button && e.button !== 0) return;
+          var desk = e.currentTarget.closest('.desk');
+          try { desk.focus({ preventScroll: true }); desk.setPointerCapture(e.pointerId); } catch (er) {}
+          self._dr = { id: f.id, sx: e.clientX, sy: e.clientY, p0: p.slice() };
+          self.setState({ sel: f.id, rueda: null });
         }
       };
     });
@@ -633,11 +661,16 @@ class Component extends DCLogic {
       showCmp: s.showCmp, cmpLabel: s.showCmp ? 'Ocultar la comparación' : 'Comparar todo en detalle',
       toggleCmp: function () { self.setState({ showCmp: !self.state.showCmp }); },
       showRueda: !!rf, showWork: !!s.work,
+      hasResults: s.results.length > 0,
+      deskCls: 'desk' + (s.touch ? ' touch' : ''),
+      clearRes: function (e) { e.stopPropagation(); self.setState({ results: [], sel: null }); },
+      vshiftCls: 'vshift' + (s.vshift ? ' on' : ''),
+      vshiftDown: function (e) { e.stopPropagation(); var on = !self.state.vshift; self.setState({ vshift: on }); if (on) self.tryOpen(self._lastX || 0); },
       ruedaStyle: rf ? 'left: ' + r.x + '%; top: ' + r.y + '%' : '',
       pillThumb: rf ? self.thumb(rf) : '',
       pillName: rf ? rf.label || (rf.name + '.' + rf.ext) : '',
       pillAct: rf ? '→ ' + DM.acts[rf.acts[r.front]][0] : '',
-      ruedaHint: rf ? (r.mode === 'drag' ? 'Mové el mouse a los costados para elegir · soltá para usar' : 'Deslizá o scrolleá a los costados · tocá la del medio para usarla') : '',
+      ruedaHint: rf ? (r.mode === 'drag' ? 'Mové a los costados para elegir · soltá para usar' : 'Deslizá o scrolleá a los costados · tocá la del medio para usarla') : '',
       workStyle: s.work ? 'left: ' + s.work.x + '%; top: ' + s.work.y + '%' : '',
       workText: s.work ? s.work.text : '',
       noteStyle: 'left: calc(' + vac[0] + '% + 50px); top: calc(' + vac[1] + '% - 62px)' + (s.used ? '; opacity: 0' : ''),
@@ -661,10 +694,10 @@ class Component extends DCLogic {
       },
       rUp: function () { var sw = self._sw; self._sw = null; if (sw && sw.moved) { self._noClick = Date.now(); } },
       rClickCap: function (e) { if (self._noClick && Date.now() - self._noClick < 350) { e.stopPropagation(); try { e.preventDefault(); } catch (er) {} self._noClick = 0; } },
-      onDeskClick: function (e) { if (e && e.target && e.target.closest && e.target.closest('.fi, .rueda')) return; if (self.state.rueda) self.setState({ rueda: null }); else self.setState({ sel: null }); },
+      onDeskClick: function (e) { if (self._upT && Date.now() - self._upT < 250) return; if (e && e.target && e.target.closest && e.target.closest('.fi, .rueda, .vshift, .clear-res')) return; if (self.state.rueda) self.setState({ rueda: null }); else self.setState({ sel: null }); },
       onKey: function (e) {
         var st = self.state, rr = st.rueda;
-        if (e.key === 'Shift' && !rr && st.sel) { var f = self.fileById(st.sel); var p = st.pos[st.sel]; if (f && f.acts && p) self.open(st.sel, Math.max(28, Math.min(72, p[0])), Math.max(40, Math.min(64, p[1])), 'tap', 0); return; }
+        if (e.key === 'Shift' && !rr) { self.tryOpen(self._lastX || 0); return; }
         if (!rr) return;
         var ff = self.fileById(rr.id);
         if (e.key === 'ArrowRight') { e.preventDefault(); self.setState({ rueda: Object.assign({}, rr, { front: Math.min(ff.acts.length - 1, rr.front + 1) }) }); }
@@ -672,28 +705,42 @@ class Component extends DCLogic {
         else if (e.key === 'Enter') { e.preventDefault(); self.apply('act', rr.front); }
         else if (e.key === 'Escape') { self.setState({ rueda: null }); }
       },
-      onOver: function (e) {
-        e.preventDefault();
-        var st = self.state;
-        if (!st.drag) return;
-        var p = self.rel(e);
-        var rr = st.rueda;
-        if (!rr && e.shiftKey) { var f = self.fileById(st.drag); if (f && f.acts) self.open(st.drag, Math.max(28, Math.min(72, p[0])), Math.max(40, Math.min(64, p[1])), 'drag', p[2]); return; }
+      pMove: function (e) {
+        var dr = self._dr; if (!dr) return;
+        self._lastX = e.clientX;
+        var rect = e.currentTarget.getBoundingClientRect();
+        if (!dr.moved && Math.hypot(e.clientX - dr.sx, e.clientY - dr.sy) < 5) return;
+        dr.moved = true;
+        dr.x = Math.max(6, Math.min(94, (e.clientX - rect.left) / rect.width * 100));
+        dr.y = Math.max(8, Math.min(90, (e.clientY - rect.top) / rect.height * 100));
+        if ((e.shiftKey || self.state.vshift) && !self.state.rueda) { self.tryOpen(e.clientX); }
+        var rr = self.state.rueda;
         if (rr && rr.mode === 'drag') {
           var ff = self.fileById(rr.id);
-          var fr = Math.max(0, Math.min(ff.acts.length - 1, Math.round((p[2] - rr.px0) / 60)));
-          if (fr !== rr.front) self.setState({ rueda: Object.assign({}, rr, { front: fr }) });
+          var fr = Math.max(0, Math.min(ff.acts.length - 1, Math.round((e.clientX - rr.px0) / 60)));
+          if (fr !== rr.front) dr.front = fr;
         }
+        if (self._raf) return;
+        self._raf = requestAnimationFrame(function () {
+          self._raf = 0;
+          var d2 = self._dr; if (!d2) return;
+          var up = { drag: { id: d2.id, x: d2.x, y: d2.y, moved: true } };
+          var r2 = self.state.rueda;
+          if (r2 && r2.mode === 'drag' && d2.front !== undefined && d2.front !== r2.front) up.rueda = Object.assign({}, r2, { front: d2.front });
+          self.setState(up);
+        });
       },
-      onDrop: function (e) {
-        e.preventDefault();
-        var st = self.state, rr = st.rueda;
-        if (rr && rr.mode === 'drag') { self.setState({ drag: null }); self.apply('act', rr.front); return; }
-        if (!st.drag) return;
-        var p = self.rel(e);
-        var pos = Object.assign({}, st.pos); pos[st.drag] = [Math.max(6, Math.min(94, p[0])), Math.max(8, Math.min(90, p[1]))];
+      pUp: function (e) {
+        var dr = self._dr; self._dr = null; self._upT = Date.now();
+        if (self._raf) { cancelAnimationFrame(self._raf); self._raf = 0; }
+        if (!dr) return;
+        var rr = self.state.rueda;
+        if (rr && rr.mode === 'drag') { var fr = dr.front !== undefined ? dr.front : rr.front; self.setState({ drag: null, vshift: false, rueda: Object.assign({}, rr, { front: fr }) }); self.apply('act', fr); return; }
+        if (!dr.moved) { self.setState({ drag: null }); return; }
+        var pos = Object.assign({}, self.state.pos); pos[dr.id] = [dr.x, dr.y];
         self.setState({ pos: pos, drag: null });
-      }
+      },
+      pCancel: function () { self._dr = null; self.setState({ drag: null, rueda: null }); }
     };
   }
 }
