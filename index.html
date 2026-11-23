@@ -27,6 +27,16 @@
  .glass2{backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important}
 }
 .cv{will-change:transform}
+/* pastilla: que el cambio al primer scroll no recalcule toda la página */
+.navbar{contain:layout style}
+.navbar.sc{padding-top:22px!important}
+.navbar.sc .nav{transform:translateY(-12px)}
+.navbar.isla.sc .nav{box-shadow:none!important}
+.navbar .nav,.navbar .nav>a,.navbar .chrome{will-change:transform}
+/* fondo: las manchas de color en una capa fija del tamaño de la pantalla (se pinta una sola vez) */
+.mx{background:var(--bg)!important;position:relative;isolation:isolate}
+.mx::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;transform:translateZ(0);
+ background:radial-gradient(60% 55% at 8% 0%,var(--b1),transparent 70%),radial-gradient(55% 50% at 62% 30%,var(--b2),transparent 70%),radial-gradient(40% 60% at 100% 55%,var(--b3),transparent 70%),radial-gradient(60% 50% at 0% 85%,var(--b2),transparent 70%),radial-gradient(50% 45% at 100% 105%,var(--b1),transparent 70%)}
 </style>
 </head>
 <body>
@@ -45,7 +55,7 @@ body{margin:0}
 .navbar.m-b.sc .nav{opacity:.62;padding-top:8px !important;padding-bottom:8px !important}
 .navbar.m-b.sc .nav:hover{opacity:1}
 .navbar.m-c.hid,.navbar.m-e.hid{transform:translateY(-140%)}
-.navbar .nav{max-width:1400px;margin:0 auto;transition:max-width .55s cubic-bezier(.22,1,.36,1),padding .45s cubic-bezier(.22,1,.36,1),border-radius .45s,box-shadow .35s,opacity .35s,backdrop-filter .35s}
+.navbar .nav{max-width:1400px;margin:0 auto;transition:max-width .5s cubic-bezier(.22,1,.36,1),padding .45s cubic-bezier(.22,1,.36,1),border-radius .45s,opacity .35s,transform .35s}
 .navbar .nav>a{transition:transform .45s cubic-bezier(.22,1,.36,1);transform-origin:left center}
 .navbar .seg{transition:max-width .4s,opacity .3s,padding .4s;max-width:160px;overflow:hidden}
 .navbar.isla.sc .nav{max-width:820px;border-radius:999px;padding:7px 7px 7px 18px !important;background:transparent;border-color:rgba(255,255,255,.1);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);box-shadow:none}
