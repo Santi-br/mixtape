@@ -22,6 +22,11 @@
  .mx{background-attachment:scroll}
 }
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+@media (hover:hover) and (min-width:821px){
+ .rib,.glass{backdrop-filter:blur(10px)!important;-webkit-backdrop-filter:blur(10px)!important}
+ .glass2{backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important}
+}
+.cv{will-change:transform}
 </style>
 </head>
 <body>
@@ -64,9 +69,9 @@ body{margin:0}
 .ghost{background:var(--glass);color:var(--ink);border:1px solid var(--line);border-radius:999px;font-weight:600;cursor:pointer;font-family:'Inter Tight',sans-serif;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
 .cap{display:inline-flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;padding:2px 7px;border-radius:6px;border:1px solid var(--line);background:var(--glass);color:var(--ink)}
 .cv{position:relative;flex:none;aspect-ratio:1;container-type:inline-size;border-radius:6.5%;overflow:hidden;color:#fff;border:0;background-size:cover;background-position:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.28),inset 0 1px 0 rgba(255,255,255,.5),0 14px 34px var(--shadow);cursor:pointer;transition:width .38s cubic-bezier(.2,.8,.2,1),height .38s cubic-bezier(.2,.8,.2,1),opacity .3s,transform .42s cubic-bezier(.22,1,.36,1);padding:0;font:inherit;text-align:left}
-.cv::after{content:"";position:absolute;top:-20%;bottom:-20%;left:-70%;width:34%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);opacity:0;pointer-events:none}
+.cv::after{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:34%;will-change:transform,opacity;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-18deg);opacity:0;pointer-events:none}
 .cv:hover::after{animation:shine 2.6s cubic-bezier(.45,0,.55,1) infinite}
-@keyframes shine{0%{left:-70%;opacity:0}15%{opacity:1}60%{left:130%;opacity:1}61%,100%{left:130%;opacity:0}}
+@keyframes shine{0%{transform:translateX(-206%) skewX(-18deg);opacity:0}15%{opacity:1}60%{transform:translateX(382%) skewX(-18deg);opacity:1}61%,100%{transform:translateX(382%) skewX(-18deg);opacity:0}}
 .cv:hover{transform:translateY(-4px) scale(1.02)}
 .cv .tg{position:absolute;top:7.5%;right:8%;font:700 3.6cqw/1 'Instrument Sans','Inter Tight',sans-serif;letter-spacing:.25cqw;opacity:.6}
 .cv .lb{position:absolute;left:8%;bottom:9%;right:8%;font:600 6.4cqw/1.1 'Instrument Sans','Inter Tight',sans-serif;letter-spacing:.1cqw;text-transform:uppercase}
