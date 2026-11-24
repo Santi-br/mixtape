@@ -21,8 +21,8 @@
 .cv{will-change:transform}
 /* fondo: las manchas de color en una capa fija del tamaño de la pantalla (se pinta una sola vez) */
 .mx{background:var(--bg)!important;position:relative;isolation:isolate}
-.mx::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;transform:translateZ(0);
- background:radial-gradient(60% 55% at 8% 0%,var(--b1),transparent 70%),radial-gradient(55% 50% at 62% 30%,var(--b2),transparent 70%),radial-gradient(40% 60% at 100% 55%,var(--b3),transparent 70%),radial-gradient(60% 50% at 0% 85%,var(--b2),transparent 70%),radial-gradient(50% 45% at 100% 105%,var(--b1),transparent 70%)}
+.mx::before{content:"";position:fixed;top:0;left:0;right:0;bottom:-40vh;z-index:-1;pointer-events:none;transform:translateZ(0);
+ background:linear-gradient(180deg,var(--bg) 0,transparent 150px),linear-gradient(0deg,var(--bg) 0,transparent 45vh),radial-gradient(60% 55% at 8% 0%,var(--b1),transparent 70%),radial-gradient(55% 50% at 62% 30%,var(--b2),transparent 70%),radial-gradient(40% 60% at 100% 55%,var(--b3),transparent 70%),radial-gradient(60% 50% at 0% 85%,var(--b2),transparent 70%),radial-gradient(50% 45% at 100% 105%,var(--b1),transparent 70%)}
 /* píldora igual a la web de venta. Único cambio: el paso de padding-top 22→10px se hace con translateY(-12px)
    y la barra tiene alto fijo, así bajar no corre toda la página (se ve igual, no se traba) */
 .navbar{contain:layout style;height:88px;box-sizing:border-box;pointer-events:none}
