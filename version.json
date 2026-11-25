@@ -1,7 +1,7 @@
 {
-  "version": "1.23.2",
-  "date": "2026-11-24",
-  "notes": "Nuevo: Rotar video (90°, 180°, espejo). Rápida, sin volver a procesar, o completa.",
+  "version": "1.23.3",
+  "date": "2026-11-25",
+  "notes": "Nueva rotación interna de la clave de licencias.",
   "page": "https://santi-br.github.io/mixtape/",
   "windows": {
     "url": "https://github.com/Santi-br/mixtape/releases/download/v1.23.1/MIXTAPE-Windows.exe",
@@ -20,6 +20,11 @@
     }
   ],
   "history": [
+    {
+      "version": "1.23.2",
+      "date": "2026-11-24",
+      "notes": "Nuevo: Rotar video (90°, 180°, espejo). Rápida, sin volver a procesar, o completa."
+    },
     {
       "version": "1.23.1",
       "date": "2026-11-22",
@@ -309,9 +314,9 @@
     }
   ],
   "patch": {
-    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.23.2.tar.gz",
-    "size": 11047719,
-    "sha256": "6aead3254bed6cd314b12371eeb152ba3a999202f3e4950d599d26edb3ce562a",
+    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.23.3.tar.gz",
+    "size": 11039848,
+    "sha256": "a00e110ca81d9f6b6a0114d9d4a2acc600b4c608191503a5c05423870c28acb9",
     "base": "1.19.0"
   }
 }
