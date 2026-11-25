@@ -1,7 +1,7 @@
 {
-  "version": "1.23.4",
+  "version": "1.23.5",
   "date": "2026-11-25",
-  "notes": "Nuevo: botón Auto/Claro/Oscuro en el inicio, con transición suave entre modos.",
+  "notes": "Arreglado: tocar \"Reiniciar\" para una actualización a veces abría la web en vez de reiniciar.",
   "page": "https://santi-br.github.io/mixtape/",
   "windows": {
     "url": "https://github.com/Santi-br/mixtape/releases/download/v1.23.1/MIXTAPE-Windows.exe",
@@ -20,6 +20,11 @@
     }
   ],
   "history": [
+    {
+      "version": "1.23.4",
+      "date": "2026-11-25",
+      "notes": "Nuevo: botón Auto/Claro/Oscuro en el inicio, con transición suave entre modos."
+    },
     {
       "version": "1.23.3",
       "date": "2026-11-25",
@@ -319,9 +324,9 @@
     }
   ],
   "patch": {
-    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.23.4.tar.gz",
-    "size": 11040393,
-    "sha256": "e18aaafd20ad8a4679889489efd7caf89ebd932a9fdf7db2d3ebcca48dd58071",
+    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.23.5.tar.gz",
+    "size": 11040635,
+    "sha256": "f80a5b5b8d7a41d8ca299be399e61dde063acf3cb5222a798bd126ee5f04cfb1",
     "base": "1.19.0"
   }
 }
