@@ -285,9 +285,18 @@ function render() {
   }).join('');
   exline.textContent = v.exLine;
 
-  faqList.innerHTML = v.faq.map(function (q) {
-    return '<div class="' + q.cls + '"><button data-action="faq-toggle" data-faq="' + q.idx + '"><span>' + esc(q.q) + '</span><span class="fa-x mono">+</span></button><div class="fa-b"><div><p>' + esc(q.a) + '</p></div></div></div>';
-  }).join('');
+  // El contenido de cada pregunta no cambia en runtime (D.faq es fijo), así que
+  // el innerHTML se arma una sola vez: si se reconstruye en cada render (como
+  // antes) se pierden los nodos .fa-b justo cuando queremos animar su apertura
+  // con la transición de grid-template-rows del CSS (#aea3d3a).
+  if (!faqList.childElementCount) {
+    faqList.innerHTML = v.faq.map(function (q) {
+      return '<div class="fa"><button data-action="faq-toggle" data-faq="' + q.idx + '"><span>' + esc(q.q) + '</span><span class="fa-x mono">+</span></button><div class="fa-b"><div><p>' + esc(q.a) + '</p></div></div></div>';
+    }).join('');
+  }
+  Array.prototype.forEach.call(faqList.children, function (el, i) {
+    el.classList.toggle('open', i === state.faq);
+  });
 }
 
 // ---------------------------------------------------------------------
