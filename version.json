@@ -4,8 +4,8 @@
   "notes": "El logo del inicio ya dice SHIX en vez de MIXTAPE.",
   "page": "https://santi-br.github.io/shix/",
   "windows": {
-    "url": "https://github.com/Santi-br/shix/releases/download/v1.23.1/MIXTAPE-Windows.exe",
-    "size": 392374110
+    "url": "https://github.com/Santi-br/shix/releases/download/v1.23.7/SHIX-Windows.exe",
+    "size": 418031454
   },
   "mac": {
     "url": "https://github.com/Santi-br/shix/releases/download/v1.19.4/MIXTAPE-Mac.dmg",
