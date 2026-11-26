@@ -1,7 +1,7 @@
 {
-  "version": "1.23.6",
+  "version": "1.23.7",
   "date": "2026-11-26",
-  "notes": "La app ahora se llama SHIX (antes MIXTAPE): nombre nuevo en toda la app y las webs. El logo sigue siendo el mismo por ahora.",
+  "notes": "El logo del inicio ya dice SHIX en vez de MIXTAPE.",
   "page": "https://santi-br.github.io/shix/",
   "windows": {
     "url": "https://github.com/Santi-br/shix/releases/download/v1.23.1/MIXTAPE-Windows.exe",
@@ -20,6 +20,11 @@
     }
   ],
   "history": [
+    {
+      "version": "1.23.6",
+      "date": "2026-11-26",
+      "notes": "La app ahora se llama SHIX (antes MIXTAPE): nombre nuevo en toda la app y las webs. El logo sigue siendo el mismo por ahora."
+    },
     {
       "version": "1.23.5",
       "date": "2026-11-25",
@@ -329,9 +334,9 @@
     }
   ],
   "patch": {
-    "url": "https://santi-br.github.io/shix/actualizaciones/1.23.6.tar.gz",
-    "size": 11041332,
-    "sha256": "687cefccb61529a614d8a1124a5927e8b47e53cfe056e826c73c2b3fa9622b02",
+    "url": "https://santi-br.github.io/shix/actualizaciones/1.23.7.tar.gz",
+    "size": 11040661,
+    "sha256": "8baa0458a8c7f5fa8432ffffd8e0518d6dd2d696a3d00e028954fb8dcc8d3d01",
     "base": "1.19.0"
   }
 }
