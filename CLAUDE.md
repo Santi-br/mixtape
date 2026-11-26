@@ -1,7 +1,9 @@
-# MIXTAPE — web "para amigos" (HTML/CSS/JS plano)
+# SHIX — web "para amigos" (HTML/CSS/JS plano)
 
-Página de descarga de la versión para amigos de MIXTAPE: https://santi-br.github.io/mixtape/
-Repo público. Solo la página y los instaladores (en Releases); el código de la app está en `mixtape-app`.
+Página de descarga de la versión para amigos de SHIX: https://santi-br.github.io/shix/
+Repo público. Solo la página y los instaladores (en Releases); el código de la app está en `shix-app`.
+(Hasta el 26/11 se llamaba MIXTAPE y este repo/la web eran `mixtape`; los instaladores y la carpeta
+instalada en las compus de los usuarios todavía dicen MIXTAPE hasta que se publique un instalador nuevo.)
 Dueño: Santi Brons. Textos en español rioplatense (voseo).
 
 ## Reglas que no se rompen
@@ -24,7 +26,9 @@ y abre el navegador en `http://localhost:5473/`. Hace falta un servidor (no sirv
   deba animarse con una transición CSS (como el acordeón de FAQ), ese contenido tiene que armarse una sola vez
   y después solo tocarle clases, no reconstruirlo.
 - `version.json` + `actualizaciones/`: lo que lee la app para "Novedades" y los links de descarga. No tocar
-  a mano salvo que sepas el formato (lo arma el flujo de publicación de `mixtape-app`).
+  a mano salvo que sepas el formato (lo arma el flujo de publicación de `shix-app`). Los links de
+  `windows`/`mac`/`extras` siguen apuntando a archivos `MIXTAPE-*.exe/.dmg` (los instaladores reales que
+  hay en Releases); recién van a decir `SHIX-*` cuando se publique un instalador nuevo con ese nombre.
 - El gate de clave (`#gate` / `.mx-gate` en `index.html`/`css/style.css`): clave SHA-256 contra una constante
   embebida en `js/main.js` (`CLAVE`). **Encontramos y arreglamos un bug real**: habían quedado unas etiquetas
   `<style>`/`</style>` sueltas dentro de `css/style.css` (resto de la conversión del artifact) que rompían el

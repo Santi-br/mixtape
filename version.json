@@ -1,25 +1,30 @@
 {
-  "version": "1.23.5",
-  "date": "2026-11-25",
-  "notes": "Arreglado: tocar \"Reiniciar\" para una actualización a veces abría la web en vez de reiniciar.",
-  "page": "https://santi-br.github.io/mixtape/",
+  "version": "1.23.6",
+  "date": "2026-11-26",
+  "notes": "La app ahora se llama SHIX (antes MIXTAPE): nombre nuevo en toda la app y las webs. El logo sigue siendo el mismo por ahora.",
+  "page": "https://santi-br.github.io/shix/",
   "windows": {
-    "url": "https://github.com/Santi-br/mixtape/releases/download/v1.23.1/MIXTAPE-Windows.exe",
+    "url": "https://github.com/Santi-br/shix/releases/download/v1.23.1/MIXTAPE-Windows.exe",
     "size": 392374110
   },
   "mac": {
-    "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-Mac.dmg",
+    "url": "https://github.com/Santi-br/shix/releases/download/v1.19.4/MIXTAPE-Mac.dmg",
     "size": 326212758
   },
   "extras": [
     {
       "name": "Paquete MIDI Pro",
-      "desc": "Para Windows: piano y voz cantada a MIDI con mucha más precisión. Va en la carpeta MIXTAPE.",
-      "url": "https://github.com/Santi-br/mixtape/releases/download/v1.19.4/MIXTAPE-MIDI-Pro.exe",
+      "desc": "Para Windows: piano y voz cantada a MIDI con mucha más precisión. Va en la carpeta MIXTAPE (el instalador completo todavía no se renombró).",
+      "url": "https://github.com/Santi-br/shix/releases/download/v1.19.4/MIXTAPE-MIDI-Pro.exe",
       "size": 46912908
     }
   ],
   "history": [
+    {
+      "version": "1.23.5",
+      "date": "2026-11-25",
+      "notes": "Arreglado: tocar \"Reiniciar\" para una actualización a veces abría la web en vez de reiniciar."
+    },
     {
       "version": "1.23.4",
       "date": "2026-11-25",
@@ -208,7 +213,7 @@
       "version": "1.19.8",
       "date": "2026-11-17",
       "notes": [
-        "Nuevo \"Acerca de MIXTAPE\" (menú del ícono y en Ayuda) con la lista de licencias de terceros: los programas y modelos de IA que usa MIXTAPE, sus autores y licencias."
+        "Nuevo \"Acerca de SHIX\" (menú del ícono y en Ayuda) con la lista de licencias de terceros: los programas y modelos de IA que usa SHIX, sus autores y licencias."
       ]
     },
     {
@@ -229,7 +234,7 @@
       "version": "1.19.5",
       "date": "2026-11-11",
       "notes": [
-        "Abajo a la derecha del hub se ve qué versión de MIXTAPE tenés."
+        "Abajo a la derecha del hub se ve qué versión de SHIX tenés."
       ]
     },
     {
@@ -324,9 +329,9 @@
     }
   ],
   "patch": {
-    "url": "https://santi-br.github.io/mixtape/actualizaciones/1.23.5.tar.gz",
-    "size": 11040635,
-    "sha256": "f80a5b5b8d7a41d8ca299be399e61dde063acf3cb5222a798bd126ee5f04cfb1",
+    "url": "https://santi-br.github.io/shix/actualizaciones/1.23.6.tar.gz",
+    "size": 11041332,
+    "sha256": "687cefccb61529a614d8a1124a5927e8b47e53cfe056e826c73c2b3fa9622b02",
     "base": "1.19.0"
   }
 }

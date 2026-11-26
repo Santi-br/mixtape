@@ -2,7 +2,7 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "mixtape-web",
+      "name": "shix-web",
       "runtimeExecutable": "node",
       "runtimeArgs": ["tools/dev-server.js"],
       "port": 5473
